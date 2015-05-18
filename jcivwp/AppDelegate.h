@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WindowsAzureMessaging/WindowsAzureMessaging.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+
+
 @property (strong, nonatomic) UIWindow *window;
+
 
 @end

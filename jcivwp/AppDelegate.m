@@ -7,12 +7,19 @@
 //
 
 #import "AppDelegate.h"
+#import <WindowsAzureMessaging/WindowsAzureMessaging.h>
 
 @implementation AppDelegate
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSLog(@"Come voer here");
+    
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    
     return YES;
 }
 							
@@ -20,6 +27,54 @@
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSString *str = [NSString stringWithFormat:@"Error %@",error];
+    NSLog(@"%@",str);
+    
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken {
+    
+/*    SBNotificationHub* hub = [[SBNotificationHub alloc] initWithConnectionString:
+                              @"Endpoint=sb://agvnotifications-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=wpSfFqApLfH7LcQPOpPP0ZrdG24U56R9vs2VHSdHGxc=" notificationHubPath:@"agvnotifications"];
+  */
+    
+    SBNotificationHub* hub = [[SBNotificationHub alloc] initWithConnectionString:
+                              @"Endpoint=sb://agvnotificationhub-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=R8FPkHZav4yT2wbfGiFcMNc5N7vf55MoM/w86ONjaws=" notificationHubPath:@"agvnotificationhub"];
+    
+    
+    
+    NSLog(@"Device Tokern %@",deviceToken);
+    //self.deviceToken = [[deviceToken d]];
+    
+    
+    [hub registerNativeWithDeviceToken:deviceToken tags:nil completion:^(NSError* error) {
+        
+        if (error != nil) {
+            NSLog(@"Error registering for notifications: %@", error);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:
+                                  @"Error While Registering" delegate:nil cancelButtonTitle:
+                                  @"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:
+                                  @"Registering" delegate:nil cancelButtonTitle:
+                                  @"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification: (NSDictionary *)userInfo {
+    NSLog(@"Received Notificaitons%@", userInfo);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:
+                          [[userInfo objectForKey:@"aps"] valueForKey:@"alert"] delegate:nil cancelButtonTitle:
+                          @"OK" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
