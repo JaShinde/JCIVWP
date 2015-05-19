@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DashboardViewController : UIViewController
+@interface DashboardViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong) IBOutlet UILabel *alarmText;
+@property(nonatomic,strong) IBOutlet UITableView *materialTable;
+@property(nonatomic,strong) IBOutlet UIButton *agvStatus;
+
 
 @end
