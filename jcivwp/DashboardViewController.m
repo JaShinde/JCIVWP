@@ -33,6 +33,9 @@
     self.alarmText.layer.masksToBounds = YES;
     self.alarmText.layer.cornerRadius = 8;
 //    self.materialTable.contentInset = UIEdgeInsetsMake(0, 0, self.materialTable.frame.size.height - 20, 0);
+    
+    UIColor *patternColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern"]];
+    self.view.backgroundColor = patternColor;
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -56,7 +59,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     
-    UIImage *myImage = [UIImage imageNamed:@"cell_background.png"];
+    UIImage *myImage = [UIImage imageNamed:@"cell_row.png"];
     UIImageView *imageView = [[[UIImageView alloc] initWithImage:myImage] init];
     imageView.frame = CGRectMake(1,1,300,44);
     
@@ -113,7 +116,7 @@
  static   NSString *CellIdentifier = @"CellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 //    
-    UIImage *myImage = [UIImage imageNamed:@"cell_background.png"];
+    UIImage *myImage = [UIImage imageNamed:@"cell_row.png"];
     UIImageView *imageView = [[[UIImageView alloc] initWithImage:myImage] init];
     imageView.frame = CGRectMake(1,1,300,44);
 //    

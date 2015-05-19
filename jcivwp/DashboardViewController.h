@@ -13,6 +13,10 @@
 @property(nonatomic,strong) IBOutlet UILabel *alarmText;
 @property(nonatomic,strong) IBOutlet UITableView *materialTable;
 @property(nonatomic,strong) IBOutlet UIButton *agvStatus;
-
+@property(nonatomic,strong) IBOutlet UIButton *station1;
+@property(nonatomic,strong) IBOutlet UIButton *station2;
+@property(nonatomic,strong) IBOutlet UIButton *station3;
+@property(nonatomic,strong) IBOutlet UIButton *station4;
+@property(nonatomic,strong) IBOutlet UIButton *station5;
 
 @end
