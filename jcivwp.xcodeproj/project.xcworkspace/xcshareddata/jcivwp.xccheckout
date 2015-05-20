@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C9238740-23C2-46D4-94A4-AF1DD9945B96</string>
+	<key>IDESourceControlProjectName</key>
+	<string>jcivwp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>259AE44D-51C0-4B4D-858F-29F00263A59D</key>
+		<string>https://github.com/JaShinde/JCIVWP.git</string>
+		<key>541A8C3A-4D84-4160-976E-E56768BE61A2</key>
+		<string>https://github.com/JaShinde/JCIVWP.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>jcivwp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>259AE44D-51C0-4B4D-858F-29F00263A59D</key>
+		<string>../../../JCIVWP</string>
+		<key>541A8C3A-4D84-4160-976E-E56768BE61A2</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/JaShinde/JCIVWP.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>541A8C3A-4D84-4160-976E-E56768BE61A2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>541A8C3A-4D84-4160-976E-E56768BE61A2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>jcivwp</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>259AE44D-51C0-4B4D-858F-29F00263A59D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JCIVWP</string>
+		</dict>
+	</array>
+</dict>
+</plist>

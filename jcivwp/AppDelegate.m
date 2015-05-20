@@ -19,6 +19,7 @@
     NSLog(@"Come voer here");
     
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+ 
     
     return YES;
 }
@@ -71,10 +72,14 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification: (NSDictionary *)userInfo {
     NSLog(@"Received Notificaitons%@", userInfo);
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:
-                          [[userInfo objectForKey:@"aps"] valueForKey:@"alert"] delegate:nil cancelButtonTitle:
+                          [[userInfo objectForKey:@"aps"] valueForKey:@"type"] delegate:nil cancelButtonTitle:
                           @"OK" otherButtonTitles:nil, nil];
     [alert show];
+    
+
+        
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application

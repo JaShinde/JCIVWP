@@ -18,5 +18,10 @@
 @property(nonatomic,strong) IBOutlet UIButton *station3;
 @property(nonatomic,strong) IBOutlet UIButton *station4;
 @property(nonatomic,strong) IBOutlet UIButton *station5;
+@property(nonatomic,strong) IBOutlet UIButton *store;
+@property(nonatomic,strong) IBOutlet UIButton *status_run;
+@property(nonatomic,strong) IBOutlet UIButton *status_stop;
+@property(nonatomic,strong) IBOutlet UIButton *status_alarm;
+
 
 @end
